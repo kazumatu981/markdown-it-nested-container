@@ -1,0 +1,41 @@
+{
+  "name": "@kazumatu981/markdown-it-nested-container",
+  "version": "1.0.0",
+  "description": "markdown-it plug-in for nested container.",
+  "main": "index.js",
+  "scripts": {
+    "build:ts": "tsc",
+    "test": "mocha tests/**/*.test.js",
+    "demo": "marp -s -c demo/marp.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazumatu981/markdown-it-nested-container.git"
+  },
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown"
+  ],
+  "author": "kazumatu981",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kazumatu981/markdown-it-nested-container/issues"
+  },
+  "homepage": "https://github.com/kazumatu981/markdown-it-nested-container#readme",
+  "dependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-container": "^2.0.5",
+    "markdown-it-container": "^3.0.0"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^2.2.0",
+    "chai": "^4.3.7",
+    "jsdom": "^20.0.2",
+    "markdown-it": "^13.0.1",
+    "mocha": "^10.1.0",
+    "sinon": "^14.0.2",
+    "typescript": "^4.8.4"
+  }
+}
