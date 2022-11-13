@@ -1,8 +1,8 @@
-import { describe, it } from "mocha";
-import { JSDOM } from "jsdom";
-import { expect } from "chai";
-import MarkdownIt from 'markdown-it';
-import MarkdownItNestedContainer from "../index.js";
+const { describe, it } = require("mocha");
+const { expect } = require("chai");
+const { JSDOM } = require("jsdom");
+const MarkdownIt = require('markdown-it');
+const MarkdownItNestedContainer = require("../index.js");
 
 
 describe('render test', () => {

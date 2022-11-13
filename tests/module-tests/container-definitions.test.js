@@ -1,14 +1,14 @@
-import { describe, it } from "mocha";
-import { expect } from "chai";
-import { DEFAULT_CONTAINER_DFINITIONS, validateContainerDefinitions } from "../../lib/container-definition.js";
+const { describe, it } = require("mocha");
+const { expect } = require("chai");
+const { DEFAULT_CONTAINER_DFINITION_JSONS, validateContainerDefinitionJsons } = require("../../lib/container-definition.js");
 
 describe('[module test]: container-definitions', () => {
     describe('safeContainerDefinitions()', () => { });
     describe('validateContainerDefinitions()', () => {
         it('default is not throw', () => {
-            const test = DEFAULT_CONTAINER_DFINITIONS;
+            const test = DEFAULT_CONTAINER_DFINITION_JSONS;
 
-            const actual = validateContainerDefinitions(test);
+            const actual = validateContainerDefinitionJsons(test);
 
             expect(actual).to.equal(test);
         });
@@ -23,7 +23,7 @@ describe('[module test]: container-definitions', () => {
                     }
                 }
             ];
-            const actual = validateContainerDefinitions(test);
+            const actual = validateContainerDefinitionJsons(test);
 
             expect(actual).to.equal(test);
         });
@@ -37,7 +37,7 @@ describe('[module test]: container-definitions', () => {
                     }
                 }
             ];
-            const actual = validateContainerDefinitions(test);
+            const actual = validateContainerDefinitionJsons(test);
 
             expect(actual).to.equal(test);
         })
@@ -51,7 +51,7 @@ describe('[module test]: container-definitions', () => {
                     }
                 }
             ];
-            const actual = validateContainerDefinitions(test);
+            const actual = validateContainerDefinitionJsons(test);
 
             expect(actual).to.equal(test);
         });
