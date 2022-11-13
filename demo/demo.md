@@ -70,15 +70,21 @@ div.grid {
 div.grid-item {
   margin: 3px;
   height: 150px;
+  line-height: 150px;
   text-align: center;
   color:white;
-  background:#000;
+  color:#F0F7D4;
+  background:#110934;
 }
-div.gray {
-  background:#DDD;
+
+div.pattern1 {
+  background:#B2D732;
 }
-div.red {
-  background:#D00;
+div.pattern2 {
+  background:#4424D6;
+}
+div.pattern3 {
+  background:#FC600A;
 }
 </style>
 
@@ -96,23 +102,23 @@ item2
 item3
 +++
 
-+++grid-item[gray]
++++grid-item[pattern1]
 item4
 +++
-+++grid-item
++++grid-item[pattern2]
 item5
 +++
-+++grid-item
++++grid-item[pattern3]
 item6
 +++
 
-+++grid-item[red]
++++grid-item[pattern2]
 item7
 +++
-+++grid-item
++++grid-item[pattern3]
 item8
 +++
-+++grid-item
++++grid-item[pattern1]
 item9
 +++
 :::
