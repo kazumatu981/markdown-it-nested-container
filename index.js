@@ -1,2 +1,2 @@
-import { MarkdownItNestedContainer } from "./lib/markdown-it-nested-container.js";
-export default MarkdownItNestedContainer;
+const { MarkdownItNestedContainer } = require("./lib/markdown-it-nested-container.js");
+module.exports = MarkdownItNestedContainer;

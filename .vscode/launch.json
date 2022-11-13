@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch demo Server",
+            "request": "launch",
+            "runtimeArgs": [
+                "run",
+                "demo"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "args": [
                 "--timeout",
                 "999999",
@@ -19,6 +39,15 @@
             ],
             "type": "node",
             "cwd": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Compound",
+            "configurations": [
+                "Launch demo Server",
+                "Launch Edge"
+            ]
         }
     ]
 }
