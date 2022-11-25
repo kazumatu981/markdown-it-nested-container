@@ -16,11 +16,9 @@ describe('[module test]: container-definie-json', () => {
         it('full-fill definition must return ture.', () => {
             const test = {
                 containerName: 'grid',
-                options: {
-                    marker: ':',
-                    render: () => { },
-                    validate: () => { }
-                }
+                marker: ':',
+                render: () => { },
+                validate: () => { }
             };
             const actual = isContainerDefineJson(test);
 
@@ -29,10 +27,8 @@ describe('[module test]: container-definie-json', () => {
         it('can abbreve render', () => {
             const test = {
                 containerName: 'grid',
-                options: {
-                    marker: ':',
-                    validate: () => { }
-                }
+                marker: ':',
+                validate: () => { }
             };
             const actual = isContainerDefineJson(test);
 
@@ -41,10 +37,8 @@ describe('[module test]: container-definie-json', () => {
         it('can abbreve validate', () => {
             const test = {
                 containerName: 'grid',
-                options: {
-                    marker: ':',
-                    render: () => { },
-                }
+                marker: ':',
+                render: () => { },
             };
             const actual = isContainerDefineJson(test);
 
@@ -53,9 +47,7 @@ describe('[module test]: container-definie-json', () => {
         it('can abbreve render and validate', () => {
             const test = {
                 containerName: 'grid',
-                options: {
-                    marker: ':'
-                }
+                marker: ':'
             };
             const actual = isContainerDefineJson(test);
 
@@ -80,9 +72,7 @@ describe('[module test]: container-definie-json', () => {
             describe('containerName error cases', () => {
                 it('when contanerName was abbreved return false', () => {
                     const test = {
-                        options: {
-                            marker: ':'
-                        }
+                        marker: ':'
                     };
                     const actual = isContainerDefineJson(test);
 
@@ -91,9 +81,7 @@ describe('[module test]: container-definie-json', () => {
                 it('if contanerName is non-string return false', () => {
                     const test = {
                         containerName: 123,
-                        options: {
-                            marker: ':'
-                        }
+                        marker: ':'
                     };
                     const actual = isContainerDefineJson(test);
 
@@ -102,26 +90,15 @@ describe('[module test]: container-definie-json', () => {
                 it('if contanerName is non-className return false', () => {
                     const test = {
                         containerName: 'grid  123',
-                        options: {
-                            marker: ':'
-                        }
+                        marker: ':'
                     };
                     const actual = isContainerDefineJson(test);
 
                     expect(actual).to.be.false;
                 });
             });
-            describe('options error cases', () => {
-                it('options is non object return false', () => {
-                    const test = {
-                        containerName: 'grid',
-                        options: 1
-                    };
-                    const actual = isContainerDefineJson(test);
-
-                    expect(actual).to.be.false;
-                });
-                it('no options return false', () => {
+            describe('marker error cases', () => {
+                it('no marker return false', () => {
                     const test = {
                         containerName: 'grid',
                     };
@@ -129,61 +106,44 @@ describe('[module test]: container-definie-json', () => {
 
                     expect(actual).to.be.false;
                 });
-                describe('marker error cases', () => {
-                    it('no marker return false', () => {
-                        const test = {
-                            containerName: 'grid',
-                            options: {
-                            }
-                        };
-                        const actual = isContainerDefineJson(test);
+                it('marker is not string return false', () => {
+                    const test = {
+                        containerName: 'grid',
+                        marker: 1
+                    };
+                    const actual = isContainerDefineJson(test);
 
-                        expect(actual).to.be.false;
-                    });
-                    it('marker is not string return false', () => {
-                        const test = {
-                            containerName: 'grid',
-                            options: {
-                                marker: 1,
-                            }
-                        };
-                        const actual = isContainerDefineJson(test);
-
-                        expect(actual).to.be.false;
-                    });
-
-                    it('marker is empty string return false', () => {
-                        const test = {
-                            containerName: 'grid',
-                            options: {
-                                marker: "",
-                            }
-                        };
-                        const actual = isContainerDefineJson(test);
-
-                        expect(actual).to.be.false;
-                    });
-                    it('marker is long string return false', () => {
-                        const test = {
-                            containerName: 'grid',
-                            options: {
-                                marker: "abc",
-                            }
-                        };
-                        const actual = isContainerDefineJson(test);
-
-                        expect(actual).to.be.false;
-                    });
+                    expect(actual).to.be.false;
                 });
+
+                it('marker is empty string return false', () => {
+                    const test = {
+                        containerName: 'grid',
+                        marker: "",
+                    };
+                    const actual = isContainerDefineJson(test);
+
+                    expect(actual).to.be.false;
+                });
+                it('marker is long string return false', () => {
+                    const test = {
+                        containerName: 'grid',
+                        marker: "abc",
+                    };
+                    const actual = isContainerDefineJson(test);
+
+                    expect(actual).to.be.false;
+                });
+            });
+
+            describe('render/validate error cases', () => {
                 describe('validate error cases', () => {
                     it('render is not function return false', () => {
                         const test = {
                             containerName: 'grid',
-                            options: {
-                                marker: ':',
-                                validate: 0,
-                                render: () => { },
-                            }
+                            marker: ':',
+                            validate: 0,
+                            render: () => { },
                         };
                         const actual = isContainerDefineJson(test);
 
@@ -194,11 +154,9 @@ describe('[module test]: container-definie-json', () => {
                     it('render is not function return false', () => {
                         const test = {
                             containerName: 'grid',
-                            options: {
-                                marker: ':',
-                                validate: () => { },
-                                render: 1,
-                            }
+                            marker: ':',
+                            validate: () => { },
+                            render: 1,
                         };
                         const actual = isContainerDefineJson(test);
 
@@ -222,9 +180,7 @@ describe('[module test]: container-definie-json', () => {
                 const test = [
                     {
                         containerName: 'grid',
-                        options: {
-                            marker: ':',
-                        }
+                        marker: ':',
                     },
                     1
                 ];
@@ -237,15 +193,11 @@ describe('[module test]: container-definie-json', () => {
                 const test = [
                     {
                         containerName: 'grid',
-                        options: {
-                            marker: ':',
-                        }
+                        marker: ':',
                     },
                     {
                         containerName: 'grid',
-                        options: {
-                            marker: '+',
-                        }
+                        marker: '+',
                     }
                 ];
                 const actual = isContainerDefineJsons(test);
@@ -257,15 +209,11 @@ describe('[module test]: container-definie-json', () => {
                 const test = [
                     {
                         containerName: 'grid',
-                        options: {
-                            marker: ':',
-                        }
+                        marker: ':',
                     },
                     {
                         containerName: 'grid-item',
-                        options: {
-                            marker: ':',
-                        }
+                        marker: ':',
                     }
                 ];
                 const actual = isContainerDefineJsons(test);
