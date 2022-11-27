@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/**/*.test.js",
+    "lint": "eslint lib",
+    "lint+fix": "eslint --fix lib",
     "demo": "marp -s -c demo/marp.config.js"
   },
   "repository": {
@@ -28,6 +30,11 @@
   "devDependencies": {
     "@marp-team/marp-cli": "^2.2.0",
     "chai": "^4.3.7",
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
     "jsdom": "^20.0.2",
     "markdown-it": "^13.0.1",
     "mocha": "^10.1.0",
