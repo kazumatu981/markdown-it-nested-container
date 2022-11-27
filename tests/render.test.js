@@ -14,8 +14,11 @@ describe('render test', () => {
             + '+++grid-item\n'
             + 'item1\n'
             + '+++\n'
-            + '+++grid-item\n'
+            + '+++grid-item[green]\n'
             + 'item2\n'
+            + '+++\n'
+            + '+++grid-item {"test":"abc"}\n'
+            + 'item3\n'
             + '+++\n'
             + ':::';
         // [expected html]
@@ -58,13 +61,24 @@ describe('render test', () => {
 
             // grid-item divs count 2.
             const gridItemDivs = document.getElementsByClassName("grid-item");
-            expect(gridItemDivs.length).to.be.equal(2);
+            expect(gridItemDivs.length).to.be.equal(3);
 
             // all grid-item's parent is root grid div.
             for (let idx = 0; idx < gridItemDivs.length; idx++) {
                 const gridItemDiv = gridItemDivs[idx];
                 expect(gridItemDiv.parentNode.isSameNode(gridDiv)).to.be.true;
             }
+
+            // 2nd Element has green class.
+            const greenItem = gridItemDivs[1];
+            const className = greenItem.getAttribute("class");
+            expect(className).to.includes("green");
+
+            // 3rd Element has test attribute.
+            const thirdItem = gridItemDivs[2];
+            const attrValue= thirdItem.getAttribute("test");
+            expect(attrValue).to.includes("abc");
+
         })
 
     });
