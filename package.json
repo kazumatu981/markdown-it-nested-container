@@ -1,6 +1,6 @@
 {
   "name": "@kazumatu981/markdown-it-nested-container",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "markdown-it plug-in for nested container.",
   "main": "index.js",
   "scripts": {
